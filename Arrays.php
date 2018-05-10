@@ -83,7 +83,7 @@ class ExtArrays {
 	 *
 	 * @since 2.0
 	 */
-	public static function init( Parser &$parser ) {
+	public static function init( Parser $parser ) {
 		global $egArraysCompatibilityMode;
 		/*
 		 * store for arrays per Parser object. This will solve several bugs related to
@@ -1031,7 +1031,7 @@ class ExtArrays {
 	# Used Hooks #
 	##############
 
-	static function onParserClearState( Parser &$parser ) {
+	static function onParserClearState( Parser $parser ) {
 		// remove all arrays to avoid conflicts with job queue or Special:Import or SMW semantic updates
 		$parser->mExtArrays = new self();
 		return true;
